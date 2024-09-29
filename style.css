@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {box-sizing: border-box;}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #fafafa;
+}
+
+.game-container{
+   width: 320px;
+   height: 320px;
+   border: 1px solid #ccc;
+   overflow: hidden;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.cell{
+    width: 77px;
+    height: 77px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #000;
+}
+
+.score-container{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cell[data-value="2"]{
+    background-color: #ffc0cb;
+}
+
+.cell[data-value="4"]{
+    background-color: #add8e6;
+}
+
+.cell[data-value="8"]{
+    background-color: #98fb98;
+}
+
+.cell[data-value="16"]{
+    background-color: #ffd700;
+}
+
+.cell[data-value="32"]{
+    background-color: #ffa07a;
+}
+
+.cell[data-value="64"]{
+    background-color: #87ceeb;
+}
+
+.cell[data-value="128"]{
+    background-color: #ffff00;
+}
+
+.cell[data-value="256"]{
+    background-color: #40e0d0;
+}
+
+.cell[data-value="512"]{
+    background-color: #ff69b4;
+}
+
+.cell[data-value="1024"]{
+    background-color: #7b68ee;
+}
+
+.cell[data-value="2048"]{
+    background-color: #ff6347;
+}
+
+.cell[data-value="4096"]{
+    background-color: #a9a9a9;
+}
+
+#restart-btn{
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.644);
+    color: #000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 75%;
+}
+
+.grid-cell[data-value]{
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.new-tile{
+    animation: appear 0.3s;
+}
+
+@keyframes appear {
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body.dark {background-color: #292c35;} /* #9b59b6 */
+
+body.dark h1, body.dark .support a {color: #fff;}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bi-moon-fill {color: #f1c40f;}
+
+.bi-sun-fill {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+#game-over h1{
+    color: #000;
+}
+
+@media screen and (max-width: 1100px) {
+    #game-over{
+        width: 40%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #game-over{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 900px) {
+    #game-over{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 800px) {
+    #game-over{
+        width: 55%;
+    }
+}
+@media screen and (max-width: 700px) {
+    #game-over{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #game-over{
+        width: 65%;
+    }
+}
+@media screen and (max-width: 500px) {
+    #game-over{
+        width: 75%;
+    }
+}
